@@ -1,0 +1,48 @@
+---
+const programs = [
+    { title: "Diplomados", img: "/imagenes/img-pagina/carrera6.jpg", link: "/diplomados", desc: "Formación integral de un año para el éxito profesional." },
+    { title: "Especialización", img: "/imagenes/img-pagina/diplomados8.jpg", link: "/especializacion", desc: "Domina áreas específicas con certificación de alto nivel." },
+    { title: "Preparación", img: "/imagenes/img-pagina/programas2.jpg", link: "/preparacion", desc: "Capacitación exclusiva para concursos y ascensos." },
+    { title: "Actualización", img: "/imagenes/img-pagina/programas1.jpg", link: "/actualizacion", desc: "Mantente al día con las últimas tendencias educativas." },
+];
+---
+<section id="programas" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16" data-aos="fade-up">
+            <div class="max-w-2xl">
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4">
+                    Nuestros <span class="text-gradient">Programas</span>
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Formando profesionales líderes con valores y excelencia académica. Descubre el programa ideal para tu crecimiento.
+                </p>
+            </div>
+            <a href="/programas" class="text-brand-maroon-700 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                Ver todos los programas <i class="fa fa-arrow-right text-sm"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {programs.map((prog, index) => (
+                <div class="group relative h-[450px] rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200/50 transition-all duration-500 hover:-translate-y-2" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <img src={prog.img} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={prog.title} />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="text-2xl font-black text-white mb-2 leading-tight">
+                            {prog.title}
+                        </h3>
+                        <p class="text-slate-300 text-sm line-clamp-2 mb-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
+                            {prog.desc}
+                        </p>
+                        <a href={prog.link} class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white text-slate-900 transition-all duration-300 group-hover:w-full group-hover:gap-3 group-hover:bg-brand-maroon-950 group-hover:text-white overflow-hidden shadow-lg">
+                            <i class="fa fa-chevron-right text-xs"></i>
+                            <span class="whitespace-nowrap font-bold text-sm opacity-0 w-0 group-hover:opacity-100 group-hover:w-auto transition-all">Explorar Programa</span>
+                        </a>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+

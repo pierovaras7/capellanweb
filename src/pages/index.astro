@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Programs from '../components/Programs.astro';
+import Testimonials from '../components/Testimonials.astro';
+---
+
+<Layout title="Elias Capellan | Centro de Capacitación Premium">
+    <Navigation />
+    
+    <main>
+        <Hero />
+        
+        <Programs />
+        
+        <!-- Video Section -->
+        <section class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div data-aos="fade-right">
+                        <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                            Descubre nuestra <span class="text-gradient">Metodología</span>
+                        </h2>
+                        <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                            No solo enseñamos, transformamos. Conoce cómo nuestro enfoque práctico y orientado a resultados ha ayudado a miles de docentes a alcanzar sus metas.
+                        </p>
+                        <ul class="space-y-4 mb-10">
+                            {[
+                                "Expertos de trayectoria internacional",
+                                "Plataforma virtual 24/7 de última generación",
+                                "Certificaciones con valor oficial",
+                                "Acompañamiento personalizado"
+                            ].map(item => (
+                                <li class="flex items-center gap-3 text-slate-700 font-medium">
+                                    <div class="w-6 h-6 rounded-full bg-brand-orange-50 flex items-center justify-center text-brand-orange-600">
+                                        <i class="fa fa-check text-[10px]"></i>
+                                    </div>
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    
+                    <div class="relative group" data-aos="fade-left">
+                        <div class="absolute -inset-4 bg-brand-maroon-500/10 rounded-[2.5rem] blur-2xl group-hover:bg-brand-maroon-500/20 transition-colors duration-500"></div>
+                        <div class="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/20">
+                            <iframe 
+                                class="w-full h-full"
+                                src="https://www.youtube.com/embed/D5xDyO3dhEE" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <Testimonials />
+
+        <!-- CTA Section -->
+        <section class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="bg-brand-maroon-950 rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl shadow-brand-maroon-950/40" data-aos="flip-up">
+                    <!-- Background Shapes -->
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+                    <div class="absolute bottom-0 left-0 w-48 h-48 bg-black/10 rounded-full -ml-20 -mb-20 blur-2xl"></div>
+                    
+                    <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left">
+                        <div class="max-w-2xl">
+                            <h3 class="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
+                                Regístrate y accede a nuestro contenido exclusivo
+                            </h3>
+                            <p class="text-brand-orange-100 text-lg">
+                                Únete a nuestra comunidad y recibe las últimas publicaciones y ofertas directamente en tu correo.
+                            </p>
+                        </div>
+                        <a href="/inscripcion" class="px-12 py-5 rounded-2xl bg-white text-brand-maroon-950 font-black text-lg hover:bg-slate-50 hover:shadow-xl hover:-translate-y-1 transition-all active:scale-95 whitespace-nowrap">
+                            Regístrate Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+

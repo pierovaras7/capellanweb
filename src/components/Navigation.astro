@@ -1,0 +1,134 @@
+---
+---
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-4">
+    <div class="max-w-7xl mx-auto">
+        <nav class="glass rounded-3xl px-6 py-3 flex items-center justify-between shadow-lg shadow-black/5">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="/" class="block group">
+                    <img src="/imagenes/img-pagina/logo.png" alt="Elias Capellan" class="h-10 w-auto transition-transform duration-300 group-hover:scale-105">
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-8">
+                <ul class="flex items-center gap-6 text-sm font-semibold tracking-wide uppercase text-slate-600">
+                    <li><a href="/" class="hover:text-brand-orange-500 transition-colors">Inicio</a></li>
+                    <li><a href="/nosotros" class="hover:text-brand-orange-500 transition-colors">Nosotros</a></li>
+                    <li><a href="/galeria" class="hover:text-brand-orange-500 transition-colors">Galería</a></li>
+                    <li class="relative group">
+                        <button class="flex items-center gap-1 hover:text-brand-orange-500 transition-colors uppercase">
+                            Programas 
+                            <i class="fa fa-chevron-down text-[10px] text-brand-orange-400"></i>
+                        </button>
+                        
+                        <!-- Dropdown -->
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                            <div class="bg-white border border-slate-100 rounded-2xl shadow-xl p-3 grid gap-2">
+                                <a href="/diplomados" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-orange-50 flex items-center justify-center text-brand-orange-600 group-hover/item:bg-brand-orange-500 group-hover/item:text-white transition-colors">
+                                        <i class="fa fa-graduation-cap"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-sm font-bold text-slate-900 leading-tight">Diplomados</span>
+                                        <span class="text-[10px] text-slate-500 lowercase">Duración 1 año</span>
+                                    </div>
+                                </a>
+                                <a href="/especializacion" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-maroon-50 flex items-center justify-center text-brand-maroon-600 group-hover/item:bg-brand-maroon-950 group-hover/item:text-white transition-colors">
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-sm font-bold text-slate-900 leading-tight">Especialización</span>
+                                        <span class="text-[10px] text-slate-500 lowercase">Duración 1 año</span>
+                                    </div>
+                                </a>
+                                <a href="/preparacion" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-orange-50 flex items-center justify-center text-brand-orange-500 group-hover/item:bg-brand-orange-500 group-hover/item:text-white transition-colors">
+                                        <i class="fa fa-book"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-sm font-bold text-slate-900 leading-tight">Preparación</span>
+                                        <span class="text-[10px] text-slate-500 lowercase">Exclusivo MINEDU</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="/contacto" class="hover:text-brand-orange-500 transition-colors">Contacto</a></li>
+                </ul>
+                
+                <a href="https://www.campusvirtual.eliascapellan.edu.pe/" target="_blank" class="btn-primary !py-2.5 !px-6 text-xs uppercase tracking-widest">
+                    Campus Virtual
+                </a>
+            </div>
+
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-600">
+                <i class="fa fa-bars text-lg"></i>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white translate-x-full transition-transform duration-500 lg:hidden">
+        <div class="flex flex-col h-full">
+            <div class="flex items-center justify-between p-6 border-b border-slate-100">
+                <img src="/imagenes/img-pagina/logo.png" alt="Logo" class="h-8">
+                <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-600">
+                    <i class="fa fa-times text-lg"></i>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-6">
+                <ul class="grid gap-6 text-xl font-bold text-slate-900">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/nosotros">Nosotros</a></li>
+                    <li><a href="/galeria">Galería</a></li>
+                    <li>
+                        <span class="text-slate-400 text-xs uppercase tracking-widest block mb-4">Programas</span>
+                        <ul class="grid gap-4 ml-4 border-l-2 border-slate-100 pl-6">
+                            <li><a href="/diplomados" class="text-base">Diplomados</a></li>
+                            <li><a href="/especializacion" class="text-base">Especialización</a></li>
+                            <li><a href="/preparacion" class="text-base">Preparación</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="p-6 border-t border-slate-100">
+                <a href="https://www.campusvirtual.eliascapellan.edu.pe/" target="_blank" class="btn-primary w-full uppercase tracking-widest">
+                    Campus Virtual
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    const header = document.getElementById('main-header');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Sticky Header Effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            header.classList.add('py-2');
+            header.classList.remove('py-4');
+        } else {
+            header.classList.add('py-4');
+            header.classList.remove('py-2');
+        }
+    });
+
+    // Mobile Menu Toggle
+    mobileMenuToggle?.addEventListener('click', () => {
+        mobileMenu?.classList.remove('translate-x-full');
+    });
+
+    mobileMenuClose?.addEventListener('click', () => {
+        mobileMenu?.classList.add('translate-x-full');
+    });
+</script>
+
