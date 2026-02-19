@@ -108,7 +108,7 @@
          <div class="row">
                <div class="col-lg-7 col-md-6 col-sm-12 text-informacion-capellan" style="">
                   
-                   <h3>Ventajas Competitivas</h3>
+                   <h3>Ventajas Competitivas (2026)</h3>
                    <br>
                    <p style="font-size: 18px">Aula Virtual las 24 Horas ,E-Mail Educativo y Personal,Videos Interativos,Docentes  Altamente Calificados,Practicas Descargables, Asesoria Educativa Permanente</p>
                    <br>
