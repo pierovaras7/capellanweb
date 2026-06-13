@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Portal de Estudiantes | Elias Capellan">
+    <div class="min-h-screen bg-gradient-to-br from-brand-maroon-950 via-brand-maroon-900 to-brand-orange-600 flex items-center justify-center p-4 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-orange-500/20 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full -ml-48 -mb-48 blur-3xl"></div>
+
+        <!-- Login Container -->
+        <div class="relative z-10 w-full max-w-md">
+            <!-- Logo/Header -->
+            <div class="text-center mb-12">
+                <div class="inline-block mb-6">
+                    <img src="/imagenes/img-pagina/logo.png" alt="Elias Capellan" class="h-14 w-auto brightness-0 invert">
+                </div>
+                <h1 class="text-4xl font-black text-white mb-2">Portal de Estudiantes</h1>
+                <p class="text-brand-orange-200">Accede a tu información académica y gestión de pagos</p>
+            </div>
+
+            <!-- Login Form -->
+            <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+                <form id="loginForm" class="space-y-6">
+                    <!-- Username Field -->
+                    <div>
+                        <label for="username" class="block text-sm font-bold text-slate-900 mb-3">
+                            Cédula / DNI
+                        </label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="12345678"
+                            class="w-full px-4 py-3 rounded-lg border-2 border-slate-300 focus:outline-none focus:border-brand-orange-500 focus:ring-2 focus:ring-brand-orange-100 transition-all text-lg"
+                            required
+                        />
+                    </div>
+
+                    <!-- Password Field -->
+                    <div>
+                        <label for="password" class="block text-sm font-bold text-slate-900 mb-3">
+                            Contraseña
+                        </label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="••••••••"
+                            class="w-full px-4 py-3 rounded-lg border-2 border-slate-300 focus:outline-none focus:border-brand-orange-500 focus:ring-2 focus:ring-brand-orange-100 transition-all text-lg"
+                            required
+                        />
+                    </div>
+
+                    <!-- Remember Me -->
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="remember" class="w-4 h-4 rounded border-slate-300" />
+                        <label for="remember" class="text-sm text-slate-600">Recuérdame en este dispositivo</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button
+                        type="submit"
+                        class="w-full py-4 rounded-2xl bg-gradient-to-r from-brand-maroon-950 to-brand-maroon-900 text-white font-black text-lg hover:shadow-lg hover:-translate-y-1 transition-all active:scale-95"
+                    >
+                        Ingresar al Portal
+                    </button>
+
+                    <!-- Error Message -->
+                    <div id="errorMsg" class="hidden p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm font-medium"></div>
+                </form>
+
+                <!-- Demo Credentials -->
+                <div class="mt-8 pt-8 border-t border-slate-200">
+                    <p class="text-xs text-slate-500 text-center mb-4 font-semibold uppercase tracking-widest">Credenciales de Demo</p>
+                    <div class="bg-slate-50 rounded-lg p-4 space-y-2 text-sm">
+                        <p class="text-slate-600"><span class="font-bold text-slate-900">Usuario:</span> 12345678</p>
+                        <p class="text-slate-600"><span class="font-bold text-slate-900">Contraseña:</span> password</p>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="mt-8 flex justify-between items-center text-sm">
+                    <a href="/" class="text-brand-maroon-600 font-bold hover:text-brand-maroon-800 transition-colors">
+                        ← Volver al inicio
+                    </a>
+                    <a href="#" class="text-brand-orange-600 font-bold hover:text-brand-orange-700 transition-colors">
+                        ¿Olvidaste tu contraseña?
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Info -->
+            <div class="mt-8 text-center text-white/80 text-sm">
+                <p>¿No tienes cuenta? <a href="#" class="text-brand-orange-300 font-bold hover:underline">Contáctanos</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('errorMsg');
+
+            // Simple validation
+            if (username === '12345678' && password === 'password') {
+                // Store login info in localStorage
+                localStorage.setItem('portalUser', JSON.stringify({
+                    username: username,
+                    name: 'Juan Pérez García',
+                    email: 'juan.perez@email.com',
+                    loginTime: new Date().toISOString()
+                }));
+
+                // Redirect to dashboard
+                window.location.href = '/portal/dashboard';
+            } else {
+                errorMsg.classList.remove('hidden');
+                errorMsg.textContent = 'Usuario o contraseña incorrectos. Usa 12345678 / password';
+            }
+        });
+    </script>
+</Layout>

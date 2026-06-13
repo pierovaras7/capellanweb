@@ -1,0 +1,130 @@
+---
+const values = [
+    { icon: "fa-target", title: "Misión", desc: "Transformar la educación mediante programas innovadores que impulsan el desarrollo profesional y personal de nuestros estudiantes." },
+    { icon: "fa-lightbulb", title: "Visión", desc: "Ser el centro de capacitación líder en América Latina, reconocido por excelencia académica y impacto transformacional." },
+    { icon: "fa-heart", title: "Valores", desc: "Integridad, excelencia, inclusión y compromiso con el desarrollo sostenible de nuestras comunidades educativas." },
+];
+
+const team = [
+    { name: "Dr. Elías Capellán", role: "Fundador y Director", img: "/imagenes/team/director.jpg" },
+    { name: "Dra. María González", role: "Directora Académica", img: "/imagenes/team/academic.jpg" },
+    { name: "Ing. Carlos Rodríguez", role: "Coordinador de Programas", img: "/imagenes/team/coordinator.jpg" },
+    { name: "Lic. Ana Martínez", role: "Directora de Estudiantes", img: "/imagenes/team/students.jpg" },
+];
+---
+
+<section class="py-24 relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-brand-orange-500/5 rounded-full -ml-48 -mt-48 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-maroon-500/5 rounded-full -mr-48 -mb-48 blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-20" data-aos="fade-up">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-brand-orange-50 border border-brand-orange-200 text-brand-maroon-950 text-xs font-bold uppercase tracking-widest mb-6">
+                Sobre Nosotros
+            </span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+                Somos Líderes en <span class="text-gradient">Educación Profesional</span>
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                Con más de una década transformando vidas a través de la educación de calidad y la innovación académica.
+            </p>
+        </div>
+
+        <!-- Values Grid -->
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+            {values.map((value, index) => (
+                <div class="group p-8 rounded-2xl bg-white border border-slate-200 hover:border-brand-orange-300 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-brand-orange-500 to-brand-maroon-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class={`fa ${value.icon} text-white text-xl`}></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">{value.title}</h3>
+                    <p class="text-slate-600 leading-relaxed">{value.desc}</p>
+                </div>
+            ))}
+        </div>
+
+        <!-- Stats Section -->
+        <div class="bg-gradient-to-r from-brand-maroon-950 to-brand-maroon-900 rounded-3xl p-12 md:p-16 mb-20 relative overflow-hidden" data-aos="flip-up">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand-orange-500/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+
+            <div class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black text-brand-orange-400 mb-2">15K+</div>
+                    <p class="text-white/80 font-medium">Estudiantes Capacitados</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black text-brand-orange-400 mb-2">250+</div>
+                    <p class="text-white/80 font-medium">Cursos Disponibles</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black text-brand-orange-400 mb-2">98%</div>
+                    <p class="text-white/80 font-medium">Tasa de Aprobación</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black text-brand-orange-400 mb-2">12</div>
+                    <p class="text-white/80 font-medium">Años de Experiencia</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="mb-20">
+            <h3 class="text-3xl md:text-4xl font-black text-slate-900 text-center mb-4">
+                Nuestro <span class="text-gradient">Equipo Directivo</span>
+            </h3>
+            <p class="text-lg text-slate-600 text-center max-w-2xl mx-auto mb-16">
+                Profesionales con trayectoria internacional comprometidos con tu éxito.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {team.map((member, index) => (
+                    <div class="group text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <div class="relative mb-6 rounded-2xl overflow-hidden h-64 bg-gradient-to-br from-brand-orange-400 to-brand-maroon-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                            <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+                            <i class="fa fa-user text-white text-6xl opacity-50"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">{member.name}</h4>
+                        <p class="text-brand-maroon-600 font-semibold">{member.role}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="bg-gradient-to-r from-slate-50 to-slate-100 rounded-3xl p-12 md:p-16" data-aos="fade-up">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-6">
+                        Una Década de <span class="text-gradient">Excelencia Educativa</span>
+                    </h3>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    </p>
+                    <ul class="space-y-4">
+                        {[
+                            "Infraestructura educativa de clase mundial",
+                            "Docentes certificados internacionalmente",
+                            "Plataforma virtual accesible 24/7",
+                            "Metodología basada en competencias"
+                        ].map(item => (
+                            <li class="flex items-center gap-3 text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-brand-orange-500 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-check text-white text-xs"></i>
+                                </div>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-brand-maroon-500/10 rounded-[2.5rem] blur-2xl group-hover:bg-brand-maroon-500/20 transition-colors duration-500"></div>
+                    <div class="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-gradient-to-br from-brand-orange-400 to-brand-maroon-600 flex items-center justify-center">
+                        <i class="fa fa-graduation-cap text-white text-8xl opacity-30"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

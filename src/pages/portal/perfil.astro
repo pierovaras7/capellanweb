@@ -1,0 +1,155 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Mi Perfil | Portal de Estudiantes">
+    <div class="min-h-screen bg-white">
+
+        <!-- Header -->
+        <header class="bg-brand-orange-500 sticky top-0 z-40 shadow-md">
+            <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-4">
+                <div class="flex items-center gap-4">
+                    <a href="/portal/dashboard" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors text-white">
+                        <i class="fa fa-arrow-left text-lg"></i>
+                    </a>
+                    <h1 class="text-xl font-bold text-white">Mi Perfil</h1>
+                </div>
+                <button id="logoutBtn" class="px-4 py-2 rounded-lg text-white font-semibold text-sm hover:bg-white/10 transition-colors border border-white/20">
+                    Salir
+                </button>
+            </div>
+        </header>
+
+        <main class="w-full p-4 md:p-8 overflow-x-hidden max-w-6xl mx-auto">
+            <!-- Profile Header -->
+            <div class="bg-white rounded-xl border border-slate-200 p-8 mb-8">
+                <div class="flex flex-col md:flex-row items-center md:items-end gap-6">
+                    <div class="w-28 h-28 rounded-2xl bg-gradient-to-br from-brand-orange-400 to-brand-orange-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i class="fa fa-user text-6xl text-white opacity-60"></i>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-black text-slate-900">Juan Pérez García</h2>
+                        <p class="text-slate-600 mb-4">DNI: 12345678</p>
+                        <div class="flex gap-2 justify-center md:justify-start flex-wrap">
+                            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-bold">
+                                <i class="fa fa-check-circle"></i> Activo
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange-100 text-brand-orange-700 text-sm font-bold">
+                                <i class="fa fa-graduation-cap"></i> Diplomado
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información Personal -->
+            <div class="bg-white rounded-xl border border-slate-200 p-8 mb-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <i class="fa fa-user text-brand-orange-500"></i> Información Personal
+                </h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Nombre Completo</label>
+                        <input type="text" value="Juan Pérez García" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-900 font-medium disabled:bg-slate-100" disabled />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-3">DNI / Cédula</label>
+                        <input type="text" value="12345678" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-900 font-medium disabled:bg-slate-100" disabled />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Email</label>
+                        <input type="email" value="juan.perez@email.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-900 font-medium disabled:bg-slate-100" disabled />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Teléfono</label>
+                        <input type="tel" value="+51 987 654 321" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-900 font-medium disabled:bg-slate-100" disabled />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Fecha de Nacimiento</label>
+                        <input type="text" value="15 de Marzo, 1995" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-900 font-medium disabled:bg-slate-100" disabled />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Género</label>
+                        <input type="text" value="Masculino" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-900 font-medium disabled:bg-slate-100" disabled />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información Académica -->
+            <div class="bg-white rounded-xl border border-slate-200 p-8 mb-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <i class="fa fa-book text-brand-orange-500"></i> Información Académica
+                </h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Programa</label>
+                        <input type="text" value="Diplomado en Gestión Educativa" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-900 font-medium disabled:bg-slate-100" disabled />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Cohorte / Grupo</label>
+                        <input type="text" value="2024-A" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-900 font-medium disabled:bg-slate-100" disabled />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Fecha de Inicio</label>
+                        <input type="text" value="01 de Enero, 2024" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-900 font-medium disabled:bg-slate-100" disabled />
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Fecha Estimada de Egreso</label>
+                        <input type="text" value="01 de Enero, 2025" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-900 font-medium disabled:bg-slate-100" disabled />
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-bold text-slate-700 mb-3">Dirección</label>
+                        <input type="text" value="Av. Principal 123, Apto 4B, Lima - Perú" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-900 font-medium disabled:bg-slate-100" disabled />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cambiar Contraseña -->
+            <div class="bg-white rounded-xl border border-slate-200 p-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <i class="fa fa-lock text-brand-orange-500"></i> Seguridad
+                </h3>
+
+                <div class="mb-6">
+                    <p class="text-slate-600 mb-4">Última vez que cambiaste tu contraseña: 2 meses atrás</p>
+                    <button class="px-6 py-3 rounded-lg bg-brand-orange-500 text-white font-bold hover:bg-brand-orange-600 transition-colors">
+                        <i class="fa fa-lock mr-2"></i> Cambiar Contraseña
+                    </button>
+                </div>
+
+                <div class="p-4 rounded-lg bg-blue-50 border border-blue-200">
+                    <p class="text-sm text-blue-700">
+                        <i class="fa fa-info-circle mr-2"></i>
+                        Por tu seguridad, te recomendamos cambiar tu contraseña cada 3 meses.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        const userStr = localStorage.getItem('portalUser');
+        if (!userStr) {
+            window.location.href = '/portal';
+        }
+
+        // Logout
+        const logoutBtn = document.getElementById('logoutBtn');
+        logoutBtn?.addEventListener('click', () => {
+            localStorage.removeItem('portalUser');
+            window.location.href = '/portal';
+        });
+    </script>
+</Layout>

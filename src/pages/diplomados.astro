@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const programs = [
+    {
+        title: "Diplomado en Gestión Educativa",
+        duration: "12 meses",
+        desc: "Formación integral para directivos y gestores educativos con énfasis en liderazgo y administración moderna.",
+        modules: ["Liderazgo Educativo", "Gestión Administrativa", "Planificación Estratégica", "Evaluación Institucional"]
+    },
+    {
+        title: "Diplomado en Docencia Universitaria",
+        duration: "12 meses",
+        desc: "Especialización para docentes universitarios en metodologías innovadoras de enseñanza-aprendizaje.",
+        modules: ["Didáctica Universitaria", "Evaluación de Aprendizajes", "Tecnología Educativa", "Investigación Pedagógica"]
+    },
+    {
+        title: "Diplomado en Tecnología Educativa",
+        duration: "12 meses",
+        desc: "Domina las herramientas digitales más avanzadas para transformar tu práctica educativa.",
+        modules: ["Plataformas LMS", "Diseño Instruccional", "Multimedia Educativa", "E-learning Avanzado"]
+    },
+    {
+        title: "Diplomado en Inclusión Educativa",
+        duration: "12 meses",
+        desc: "Aprender a crear ambientes educativos inclusivos que respeten la diversidad y promocionen la equidad.",
+        modules: ["Educación Inclusiva", "Necesidades Especiales", "Adaptaciones Curriculares", "Accesibilidad"]
+    },
+];
+---
+
+<Layout title="Diplomados | Elias Capellan">
+    <Navigation />
+
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="py-16 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h1 class="text-5xl md:text-6xl font-black text-slate-900 mb-6">
+                        Diplomados de <span class="text-gradient">Excelencia Académica</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
+                        Programas de formación integral diseñados para impulsar tu carrera profesional con reconocimiento académico oficial.
+                    </p>
+                </div>
+
+                <!-- Programs Grid -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    {programs.map((prog, index) => (
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay={index * 100}>
+                            <!-- Header -->
+                            <div class="h-40 bg-gradient-to-br from-brand-orange-400 to-brand-maroon-600 relative overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                                <i class="fa fa-book text-white text-6xl opacity-20"></i>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="p-8">
+                                <div class="flex items-start justify-between mb-4">
+                                    <h3 class="text-2xl font-bold text-slate-900 flex-1 pr-4">{prog.title}</h3>
+                                    <span class="text-xs font-bold text-brand-orange-500 uppercase tracking-widest whitespace-nowrap">
+                                        {prog.duration}
+                                    </span>
+                                </div>
+
+                                <p class="text-slate-600 mb-6 leading-relaxed">{prog.desc}</p>
+
+                                <!-- Modules -->
+                                <div class="mb-6">
+                                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Módulos</p>
+                                    <ul class="space-y-2">
+                                        {prog.modules.map(module => (
+                                            <li class="flex items-center gap-2 text-sm text-slate-600">
+                                                <i class="fa fa-check text-brand-orange-500 text-xs"></i>
+                                                {module}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <!-- Buttons -->
+                                <div class="flex gap-3 pt-6 border-t border-slate-100">
+                                    <a href="/contacto" class="flex-1 py-3 rounded-lg bg-brand-maroon-950 text-white font-bold text-center hover:bg-brand-maroon-900 transition-colors">
+                                        Más Información
+                                    </a>
+                                    <a href="/inscripcion" class="flex-1 py-3 rounded-lg border-2 border-brand-orange-500 text-brand-orange-600 font-bold text-center hover:bg-brand-orange-50 transition-colors">
+                                        Inscribirse
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="py-24 relative overflow-hidden bg-gradient-to-r from-brand-maroon-950 to-brand-maroon-900">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-brand-orange-500/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <h2 class="text-4xl md:text-5xl font-black text-white text-center mb-16">
+                    ¿Por qué elegir nuestros <span class="text-brand-orange-400">Diplomados?</span>
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    {[
+                        { icon: "fa-certificate", title: "Certificación Oficial", desc: "Reconocida por instituciones educativas nacionales e internacionales." },
+                        { icon: "fa-users", title: "Docentes Expertos", desc: "Profesionales con trayectoria internacional en sus disciplinas." },
+                        { icon: "fa-laptop", title: "Plataforma Virtual", desc: "Acceso 24/7 a contenido interactivo y recursos educativos." },
+                        { icon: "fa-chart-line", title: "Bolsa de Empleo", desc: "Oportunidades laborales exclusivas para nuestros egresados." },
+                        { icon: "fa-handshake", title: "Networking", desc: "Conecta con profesionales de tu área en nuestra comunidad." },
+                        { icon: "fa-graduation-cap", title: "Acompañamiento", desc: "Mentoría personalizada durante todo tu proceso formativo." },
+                    ].map((benefit, index) => (
+                        <div class="text-center text-white group" data-aos="fade-up" data-aos-delay={index * 100}>
+                            <div class="w-16 h-16 rounded-full bg-brand-orange-500 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class={`fa ${benefit.icon} text-2xl`}></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">{benefit.title}</h3>
+                            <p class="text-white/80 text-sm leading-relaxed">{benefit.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Dashboard | Portal de Estudiantes">
+    <div class="min-h-screen bg-white">
+        <!-- Header -->
+        <header class="bg-brand-orange-500 sticky top-0 z-40 shadow-md">
+            <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-4">
+                <div class="flex items-center gap-4">
+                    <button id="toggleSidebar" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors text-white">
+                        <i class="fa fa-bars text-lg"></i>
+                    </button>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Mi Aula</h1>
+                        <p class="text-xs text-white/90">Portal Académico</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex items-center gap-3 px-4 py-2 rounded-lg bg-white/10">
+                        <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                            <i class="fa fa-user text-white text-sm"></i>
+                        </div>
+                        <div class="text-sm">
+                            <p class="font-semibold text-white" id="userNameHeader">Juan Pérez</p>
+                            <p class="text-xs text-white/80">Estudiante Activo</p>
+                        </div>
+                    </div>
+                    <button id="logoutBtn" class="px-4 py-2 rounded-lg text-white font-semibold text-sm hover:bg-white/10 transition-colors border border-white/20">
+                        Salir
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Container -->
+        <div class="flex min-h-[calc(100vh-60px)]">
+            <!-- Sidebar -->
+            <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 top-[60px] w-64 bg-slate-50 border-r border-slate-200 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-30 lg:z-0 h-[calc(100vh-60px)] overflow-y-auto">
+                <!-- Close Button Mobile -->
+                <div class="flex items-center justify-between px-6 py-4 lg:hidden border-b border-slate-200">
+                    <h2 class="font-semibold text-slate-900">Menú</h2>
+                    <button id="closeSidebar" class="w-8 h-8 flex items-center justify-center hover:bg-slate-200 rounded-lg text-slate-700">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="p-4 space-y-1">
+                    <a href="/portal/dashboard" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-brand-orange-100 text-brand-orange-700 font-semibold transition-colors hover:bg-brand-orange-200">
+                        <i class="fa fa-home text-lg"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="/portal/perfil" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-200 transition-colors">
+                        <i class="fa fa-user text-lg"></i>
+                        <span>Mi Perfil</span>
+                    </a>
+                    <a href="/portal/academico" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-200 transition-colors">
+                        <i class="fa fa-book text-lg"></i>
+                        <span>Información Académica</span>
+                    </a>
+                    <a href="/portal/pagos" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-200 transition-colors">
+                        <i class="fa fa-credit-card text-lg"></i>
+                        <span>Pagos</span>
+                    </a>
+                </nav>
+
+                <!-- Help Section -->
+                <div class="m-4 p-4 bg-brand-orange-50 rounded-lg border border-brand-orange-200">
+                    <p class="text-sm font-semibold text-slate-900 mb-2">¿Necesitas ayuda?</p>
+                    <a href="/contacto" class="block px-3 py-2 rounded-lg bg-brand-orange-500 text-white font-semibold text-sm hover:bg-brand-orange-600 transition-colors text-center">
+                        Contactar Soporte
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Content -->
+            <main class="flex-1 w-full p-6 md:p-8 overflow-x-hidden max-w-6xl mx-auto">
+                <!-- Welcome Section -->
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-2">¡Hola, <span id="userName" class="text-brand-orange-500">Juan</span>!</h2>
+                    <p class="text-slate-600">Bienvenido a tu portal académico</p>
+                </div>
+
+                <!-- Stats Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-shadow border-l-4 border-l-brand-orange-500">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-slate-600 text-sm font-medium mb-1">Programa Actual</p>
+                                <p class="text-2xl font-bold text-slate-900">Diplomado</p>
+                                <p class="text-xs text-slate-500 mt-2">Gestión Educativa</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-lg bg-brand-orange-50 flex items-center justify-center">
+                                <i class="fa fa-graduation-cap text-xl text-brand-orange-500"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-shadow border-l-4 border-l-green-500">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-slate-600 text-sm font-medium mb-1">Estado</p>
+                                <p class="text-2xl font-bold text-slate-900">Activo</p>
+                                <p class="text-xs text-slate-500 mt-2">Al día con pagos</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center">
+                                <i class="fa fa-check-circle text-xl text-green-600"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-shadow border-l-4 border-l-brand-orange-400">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-slate-600 text-sm font-medium mb-1">Promedio</p>
+                                <p class="text-2xl font-bold text-slate-900">18.5</p>
+                                <p class="text-xs text-slate-500 mt-2">De 20.0</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-lg bg-brand-orange-50 flex items-center justify-center">
+                                <i class="fa fa-chart-line text-xl text-brand-orange-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4">Acciones Rápidas</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <a href="/portal/academico" class="bg-white rounded-lg border border-slate-200 p-4 text-center hover:shadow-lg transition-shadow hover:border-brand-orange-300 hover:bg-brand-orange-50">
+                            <i class="fa fa-list text-2xl text-brand-orange-500 mb-2 block"></i>
+                            <p class="text-sm font-semibold text-slate-900">Información Académica</p>
+                        </a>
+                        <a href="/portal/pagos" class="bg-white rounded-lg border border-slate-200 p-4 text-center hover:shadow-lg transition-shadow hover:border-brand-orange-300 hover:bg-brand-orange-50">
+                            <i class="fa fa-receipt text-2xl text-brand-orange-500 mb-2 block"></i>
+                            <p class="text-sm font-semibold text-slate-900">Pagos</p>
+                        </a>
+                        <a href="/portal/perfil" class="bg-white rounded-lg border border-slate-200 p-4 text-center hover:shadow-lg transition-shadow hover:border-brand-orange-300 hover:bg-brand-orange-50">
+                            <i class="fa fa-user-edit text-2xl text-brand-orange-500 mb-2 block"></i>
+                            <p class="text-sm font-semibold text-slate-900">Mi Perfil</p>
+                        </a>
+                        <a href="/contacto" class="bg-white rounded-lg border border-slate-200 p-4 text-center hover:shadow-lg transition-shadow hover:border-brand-orange-300 hover:bg-brand-orange-50">
+                            <i class="fa fa-envelope text-2xl text-brand-orange-500 mb-2 block"></i>
+                            <p class="text-sm font-semibold text-slate-900">Contacto</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Progress Section -->
+                <div class="bg-white rounded-xl border border-slate-200 p-6">
+                    <h3 class="text-lg font-bold text-slate-900 mb-6">Progreso del Programa</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <p class="text-slate-900 font-semibold">Cursos Completados</p>
+                                <p class="text-sm text-slate-600">6 de 8</p>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+                                <div class="bg-brand-orange-500 h-full rounded-full transition-all" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <p class="text-slate-900 font-semibold">Créditos Obtenidos</p>
+                                <p class="text-sm text-slate-600">22 de 32</p>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+                                <div class="bg-brand-orange-500 h-full rounded-full transition-all" style="width: 69%;"></div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 mt-4 p-3 rounded-lg bg-brand-orange-50 border border-brand-orange-200">
+                            <strong class="text-slate-900">Estimado de graduación:</strong> Enero 2025
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Overlay for Mobile -->
+        <div id="sidebarOverlay" class="fixed inset-0 bg-black/30 z-20 lg:hidden hidden"></div>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        const userStr = localStorage.getItem('portalUser');
+        if (!userStr) {
+            window.location.href = '/portal';
+        }
+
+        const user = userStr ? JSON.parse(userStr) : null;
+
+        // Update user name
+        if (user) {
+            const userNameEl = document.getElementById('userName');
+            const userHeaderEl = document.getElementById('userNameHeader');
+            if (userNameEl) userNameEl.textContent = user.name.split(' ')[0];
+            if (userHeaderEl) userHeaderEl.textContent = user.name;
+        }
+
+        // Sidebar toggle
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        const toggleBtn = document.getElementById('toggleSidebar');
+        const closeBtn = document.getElementById('closeSidebar');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        toggleBtn?.addEventListener('click', () => {
+            sidebar?.classList.toggle('-translate-x-full');
+            overlay?.classList.toggle('hidden');
+        });
+
+        closeBtn?.addEventListener('click', () => {
+            sidebar?.classList.add('-translate-x-full');
+            overlay?.classList.add('hidden');
+        });
+
+        overlay?.addEventListener('click', () => {
+            sidebar?.classList.add('-translate-x-full');
+            overlay?.classList.add('hidden');
+        });
+
+        // Logout
+        logoutBtn?.addEventListener('click', () => {
+            localStorage.removeItem('portalUser');
+            window.location.href = '/portal';
+        });
+    </script>
+</Layout>
